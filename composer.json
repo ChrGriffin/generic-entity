@@ -1,0 +1,19 @@
+{
+    "name": "chrgriffin/generic-entity",
+    "description": "Simple base class for generic PHP entities.",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "authors": [
+        {
+            "name": "Christian Griffin",
+            "email": "c.griffin@arcane.ws"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "GenericEntity.php"
+        ]
+    }
+}
