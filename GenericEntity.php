@@ -91,8 +91,23 @@ class GenericEntity
      *
      * @return array
      */
-    public function serialize() : array
+    public function toArray() : array
     {
-        return (array)$this->attributes;
+        return $this->mapToArray($this->attributes);
+    }
+
+    /**
+     * Return the given value parsed to an array.
+     *
+     * @param mixed $value
+     * @return mixed
+     */
+    private function mapToArray($value)
+    {
+        if(is_object($value)) {
+            $value = get_object_vars($value);
+        }
+
+        return is_array($value) ? array_map(__METHOD__, $value) : $value;
     }
 }
